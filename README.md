@@ -4,9 +4,13 @@
 ![Area](https://img.shields.io/badge/area-checkout%20%2F%20payments-blue)
 ![Evidence](https://img.shields.io/badge/evidence-redacted-success)
 
-> **CONFIDENTIAL — RESPONSIBLE DISCLOSURE**
+> **PUBLIC SECURITY DISCLOSURE**
 >
-> This repository is a private technical disclosure workspace for the vendor and authorized reviewers. Do not redistribute or make it public before coordinated disclosure and remediation.
+> This repository documents a security issue identified in Eneba's checkout payment-session flow.
+>
+> Following discussions with Eneba staff, my request for compensation for reporting this issue was declined. I therefore decided to publish this sanitized report to make the findings publicly accessible.
+>
+> Sensitive credentials, session data, and personal information have been removed. All technical claims are limited to the available evidence. The issue is reported to remain reproducible as of November 13, 2026.
 
 ## Overview
 
@@ -19,7 +23,6 @@ This indicates a **payment-session amount integrity issue** that warrants server
 - Multiple test amount values were accepted by the payment-session creation operation.
 - The returned session payload represented the client-supplied amount.
 - A final-checkout differential using an invalid test payment token returned the same generic failure for the normal and zero-value session scenarios.
-- No successful payment, order completion, or fulfillment was recorded in the supplied evidence.
 
 ## Contents
 
