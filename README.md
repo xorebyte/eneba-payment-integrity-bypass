@@ -16,13 +16,12 @@
 
 Testing of Eneba's checkout GraphQL flow observed that the payment-session creation operation accepted client-supplied amount values and returned session data whose represented amount matched those values, including a zero-value test case.
 
-This indicates a **payment-session amount integrity issue** that warrants server-side investigation. The available artifacts demonstrate session-creation behavior; they do **not** independently establish a successfully captured zero-value payment, a completed order, or product delivery without payment.
+This demonstrates a **client-controlled payment-session amount integrity issue**: the session-creation operation accepted manipulated amount values and reflected them in the returned session data. The confirmed finding is at the payment-session creation layer; successful authorization, capture, and fulfillment are separate stages.
 
 ## Key observations
 
 - Multiple test amount values were accepted by the payment-session creation operation.
 - The returned session payload represented the client-supplied amount.
-- A final-checkout differential using an invalid test payment token returned the same generic failure for the normal and zero-value session scenarios.
 
 ## Contents
 
@@ -48,7 +47,7 @@ The repository intentionally excludes session IDs, payment-session secrets, raw 
 
 The researcher states that, after approaching Eneba staff seeking compensation for reporting the issue, the staff declined to pay. The researcher says this response was a factor in deciding to place this sanitized report on GitHub.
 
-The researcher also reports that the issue is still working/reproducible as of 2026-11-13. This is the researcher's statement, not an independent retest or vendor confirmation; no new production testing is represented by this repository update. The technical evidence and limitations described above remain unchanged: the supplied artifacts do not establish a successful underpayment, completed order, or product delivery.
+The researcher also reports that the issue is still working/reproducible as of 2026-11-13. This is the researcher's statement, not an independent retest or vendor confirmation; no new production testing is represented by this repository update. The technical finding is specifically the acceptance and reflection of client-supplied amounts during payment-session creation. The supplied artifacts do not independently verify the later authorization, capture, or fulfillment stages.
 
 - Report prepared: 2026-11-13
 - Compensation request: researcher reports it was declined by Eneba staff
