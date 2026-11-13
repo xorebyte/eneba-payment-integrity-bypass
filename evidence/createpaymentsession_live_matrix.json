@@ -1,0 +1,29 @@
+{
+  "evidence_type": "sanitized_payment_session_amount_matrix",
+  "source_test_date": "2026-09-07",
+  "currency": "EUR",
+  "records": [
+    {
+      "requested_amount_minor_units": 55879,
+      "http_status": 200,
+      "session_payload_amount_minor_units": 55879
+    },
+    {
+      "requested_amount_minor_units": 0,
+      "http_status": 200,
+      "session_payload_amount_minor_units": 0
+    },
+    {
+      "requested_amount_minor_units": 1,
+      "http_status": 200,
+      "session_payload_amount_minor_units": 1
+    }
+  ],
+  "redactions": [
+    "session identifiers",
+    "payment-session tokens and secrets",
+    "integration identifiers",
+    "customer and cart identifiers"
+  ],
+  "result_limit": "Session creation behavior only; no successful payment, order completion, or fulfillment demonstrated."
+}
