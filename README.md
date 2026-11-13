@@ -45,7 +45,7 @@ The repository intentionally excludes session IDs, payment-session secrets, raw 
 
 ## Researcher statement and disclosure status
 
-The researcher states that, after approaching Eneba staff seeking compensation for reporting the issue, the staff declined to pay. The researcher says this response was a factor in deciding to place this sanitized report on GitHub.
+after approaching Eneba staff seeking compensation for reporting the issue, the staff declined to pay.this response was a factor in deciding to place this sanitized report on GitHub.
 
 the issue is still working/reproducible as of 2026-11-13. This is the researcher's statement, not an independent retest or vendor confirmation; no new production testing is represented by this repository update. The technical finding documents the acceptance and reflection of client-supplied amounts during payment-session creation.
 
