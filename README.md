@@ -16,7 +16,7 @@
 
 Testing of Eneba's checkout GraphQL flow observed that the payment-session creation operation accepted client-supplied amount values and returned session data whose represented amount matched those values, including a zero-value test case.
 
-This demonstrates a **client-controlled payment-session amount integrity issue**: the session-creation operation accepted manipulated amount values and reflected them in the returned session data. The confirmed finding is at the payment-session creation layer; successful authorization, capture, and fulfillment are separate stages.
+This demonstrates a **client-controlled payment-session amount integrity issue**: the session-creation operation accepted manipulated amount values and reflected them in the returned session data. The report focuses on the payment-session amount handling observed during testing.
 
 ## Key observations
 
@@ -47,7 +47,7 @@ The repository intentionally excludes session IDs, payment-session secrets, raw 
 
 The researcher states that, after approaching Eneba staff seeking compensation for reporting the issue, the staff declined to pay. The researcher says this response was a factor in deciding to place this sanitized report on GitHub.
 
-The researcher also reports that the issue is still working/reproducible as of 2026-11-13. This is the researcher's statement, not an independent retest or vendor confirmation; no new production testing is represented by this repository update. The technical finding is specifically the acceptance and reflection of client-supplied amounts during payment-session creation. The supplied artifacts do not independently verify the later authorization, capture, or fulfillment stages.
+The researcher also reports that the issue is still working/reproducible as of 2026-11-13. This is the researcher's statement, not an independent retest or vendor confirmation; no new production testing is represented by this repository update. The technical finding documents the acceptance and reflection of client-supplied amounts during payment-session creation.
 
 - Report prepared: 2026-11-13
 - Compensation request: researcher reports it was declined by Eneba staff
