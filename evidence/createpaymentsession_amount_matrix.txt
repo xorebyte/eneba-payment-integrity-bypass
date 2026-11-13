@@ -1,0 +1,22 @@
+SANITIZED PAYMENT-SESSION AMOUNT MATRIX
+========================================
+
+Test context:
+- Currency: EUR
+- Cart payable amount reported in source material: 173013 minor units
+- Session identifiers, raw payment-session tokens, integration identifiers, and cart metadata removed.
+
+Requested amount (minor units) | HTTP status | Amount represented in returned session payload
+------------------------------ | ----------- | ---------------------------------------------
+173013                         | 200         | 173013
+100                            | 200         | 100
+1                              | 200         | 1
+0                              | 200         | 0
+
+Observation:
+The supplied test output indicates that the amount represented in each created session matched the client-supplied amount, including the zero-value case.
+
+Limitations:
+- This file does not contain raw session credentials or token payloads.
+- Session creation is not proof of payment authorization or capture.
+- No completed order or product delivery at a reduced/zero amount is established by this matrix.
