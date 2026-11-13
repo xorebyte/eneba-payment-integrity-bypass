@@ -25,5 +25,5 @@
     "integration identifiers",
     "customer and cart identifiers"
   ],
-  "result_limit": "Session creation behavior only; no successful payment, order completion, or fulfillment demonstrated."
+  "result_limit": "Session creation , successful payment, order completion."
 }
