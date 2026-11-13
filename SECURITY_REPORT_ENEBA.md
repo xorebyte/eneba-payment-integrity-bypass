@@ -4,7 +4,7 @@
 **Title:** Client-Controlled Amount in Payment-Session Creation  
 **Affected area:** Checkout / payment-session integrity  
 **Reported:** 2026-11-13  
-**Disclosure status:** Private; vendor response not recorded
+**Disclosure status:** Researcher reports compensation was declined; current reproducibility is researcher-reported and not independently verified
 
 ---
 
@@ -91,13 +91,17 @@ The current evidence establishes a session-creation integrity concern, but does 
 - Raw session credentials, tokens, cookies, personal data, IP addresses, cart identifiers, and account identifiers have been excluded from this repository.
 - No further testing should be performed against production payment flows without explicit authorization and an agreed test procedure.
 
-## 8. Disclosure timeline
+## 8. Researcher statement and disclosure timeline
+
+The researcher states that they approached Eneba staff seeking compensation for reporting this issue and that the staff declined to pay. The researcher says this refusal was a reason they decided to put the sanitized report on GitHub. This is the researcher's account; correspondence or other independent confirmation of the compensation discussion is not included in this repository.
+
+The researcher further reports that the issue is still working/reproducible as of 2026-11-13. This status has not been independently retested as part of this repository update and should not be read as a new production test or vendor confirmation. The technical limitations in Section 4.3 remain unchanged.
 
 | Date | Event |
 |---|---|
 | 2026-09-07 | Additional validation described in source material |
-| 2026-11-13 | Sanitized report prepared |
-| Pending | Vendor notification / acknowledgement |
+| 2026-11-13 | Sanitized report prepared; researcher reports compensation request was declined and issue remains reproducible |
+| Pending | Independent validation / vendor response |
 | Pending | Vendor verification and remediation |
 
 ---
