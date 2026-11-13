@@ -41,11 +41,15 @@ The repository intentionally excludes session IDs, payment-session secrets, raw 
 4. Invalidate stale sessions whenever cart contents, currency, fees, or payable totals change.
 5. Log and alert on payment-session/cart amount mismatches.
 
-## Disclosure status
+## Researcher statement and disclosure status
+
+The researcher states that, after approaching Eneba staff seeking compensation for reporting the issue, the staff declined to pay. The researcher says this response was a factor in deciding to place this sanitized report on GitHub.
+
+The researcher also reports that the issue is still working/reproducible as of 2026-11-13. This is the researcher's statement, not an independent retest or vendor confirmation; no new production testing is represented by this repository update. The technical evidence and limitations described above remain unchanged: the supplied artifacts do not establish a successful underpayment, completed order, or product delivery.
 
 - Report prepared: 2026-11-13
-- Vendor notification: not confirmed
-- Vendor response: not recorded
-- Remediation verification: pending
+- Compensation request: researcher reports it was declined by Eneba staff
+- Current reproducibility: researcher-reported; not independently verified in this update
+- Vendor remediation: not confirmed
 
-**Handling:** Keep this repository private and share it only with authorized security contacts.
+**Handling:** This repository remains private. Share it only with authorized security contacts or other recipients you intentionally choose.
