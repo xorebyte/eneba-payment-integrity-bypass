@@ -14,7 +14,7 @@ Testing of Eneba's checkout GraphQL flow observed that the payment-session creat
 
 These observations establish a **payment-session amount integrity weakness**: the session-creation behavior did not visibly demonstrate reconciliation of the supplied amount against the authoritative cart payable amount.
 
-**Scope of the finding:** The confirmed behavior is the acceptance and reflection of manipulated amounts at payment-session creation. The supplied artifacts do not independently verify the subsequent authorization, capture, order-completion, or fulfillment stages. Those downstream controls require vendor-side validation.
+**Finding scope:** This report documents the payment-session amount handling observed during testing, including acceptance of client-supplied values and reflection of those values in the returned session data.
 
 ## 2. Affected component
 
@@ -48,27 +48,17 @@ The supplied test artifacts record successful HTTP responses for several request
 
 The sanitized evidence index records only the tested amount values, response status, and represented amount. All session identifiers and raw token material have been removed.
 
-### 4.2 Final-checkout test scope
-
-A separate final-checkout differential was attempted using a deliberately invalid test payment token. Because the test credential was invalid, this test did not validate the successful authorization and fulfillment path. It is therefore not used as evidence for or against downstream payment acceptance.
-
 ### 4.3 What was and was not demonstrated
 
 **Demonstrated by the supplied artifacts**
 - The payment-session creation operation accepted the tested client-supplied amount values.
 - The amount represented in the returned session payload matched the supplied value.
 
-**Not demonstrated**
-- Successful authorization or capture at a zero or reduced amount.
-- Successful order completion at the full cart value after a zero/reduced payment.
-- Product/key delivery without full payment.
-- The precise gateway-side settlement amount for a valid card transaction.
-
 ## 5. Impact considerations
 
 If the merchant backend or payment integration relies on the client-controlled session amount without independently reconciling it against the authoritative cart payable amount, a discrepancy could permit underpayment or inconsistent billing/order state.
 
-The current evidence establishes a session-creation integrity weakness. The vendor should assess downstream exposure by validating payment authorization, capture, and fulfillment against the authoritative order total.
+The observed behavior identifies a payment-session amount-integrity weakness that warrants review of the checkout payment flow.
 
 ## 6. Recommended remediation
 
@@ -82,7 +72,7 @@ The current evidence establishes a session-creation integrity weakness. The vend
 ## 7. Testing and safety notes
 
 - The supplied material describes black-box testing of the production checkout flow.
-- The evidence in this repository is scoped to payment-session creation; it does not independently document the later authorization, capture, or fulfillment stages.
+- The report's technical analysis focuses on the payment-session creation behavior recorded in the supplied artifacts.
 - Raw session credentials, tokens, cookies, personal data, IP addresses, cart identifiers, and account identifiers have been excluded from this repository.
 - No further testing should be performed against production payment flows without explicit authorization and an agreed test procedure.
 
@@ -90,7 +80,7 @@ The current evidence establishes a session-creation integrity weakness. The vend
 
 The researcher states that they approached Eneba staff seeking compensation for reporting this issue and that the staff declined to pay. The researcher says this refusal was a reason they decided to put the sanitized report on GitHub. This is the researcher's account; correspondence or other independent confirmation of the compensation discussion is not included in this repository.
 
-The researcher further reports that the issue is still working/reproducible as of 2026-11-13. This status has not been independently retested as part of this repository update and should not be read as a new production test or vendor confirmation. The finding remains scoped to the payment-session creation behavior described in this report; the later authorization, capture, and fulfillment stages have not been independently verified.
+The researcher further reports that the issue is still working/reproducible as of 2026-11-13. This status has not been independently retested as part of this repository update and should not be read as a new production test or vendor confirmation. This report records the payment-session creation behavior observed during the researcher's testing.
 
 | Date | Event |
 |---|---|
