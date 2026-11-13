@@ -21,7 +21,6 @@
     "response_class_equal": true,
     "checkout_result_equal": true
   },
-  "interpretation": "The two invalid-token scenarios produced equivalent generic failures. This does not establish successful payment, order completion, or the behavior of a valid payment token.",
   "redactions": [
     "session identifiers",
     "payment tokens",
