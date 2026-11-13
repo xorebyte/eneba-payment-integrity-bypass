@@ -1,0 +1,31 @@
+{
+  "evidence_type": "sanitized_final_checkout_differential",
+  "source_test_date": "2026-09-07",
+  "scenarios": [
+    {
+      "scenario": "normal_amount_session",
+      "http_status": 200,
+      "checkout_result": null,
+      "response_class": "generic_error",
+      "payment_token": "invalid_test_token_redacted"
+    },
+    {
+      "scenario": "zero_amount_session",
+      "http_status": 200,
+      "checkout_result": null,
+      "response_class": "generic_error",
+      "payment_token": "invalid_test_token_redacted"
+    }
+  ],
+  "comparison": {
+    "response_class_equal": true,
+    "checkout_result_equal": true
+  },
+  "interpretation": "The two invalid-token scenarios produced equivalent generic failures. This does not establish successful payment, order completion, or the behavior of a valid payment token.",
+  "redactions": [
+    "session identifiers",
+    "payment tokens",
+    "cart and account identifiers",
+    "customer details"
+  ]
+}
