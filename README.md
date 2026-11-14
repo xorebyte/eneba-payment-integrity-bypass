@@ -53,5 +53,3 @@ the issue is still working/reproducible as of 2026-11-13. This is the researcher
 - Compensation request: researcher reports it was declined by Eneba staff
 - Current reproducibility: researcher-reported; not independently verified in this update
 - Vendor remediation: not confirmed
-
-**Handling:** This repository remains private. Share it only with authorized security contacts or other recipients you intentionally choose.
